@@ -1,5 +1,5 @@
 ---
-name: openclaw-auto-preset-switcher
+name: openclaw-llm-preset-switcher
 description: Classify the current task and apply the recommended LLM preset strategy for Brodie, Arty, coding, RAG, browser, shell, vision QC, planning, and creative prompting work.
 version: 1.0.0
 author: Skip Potter
