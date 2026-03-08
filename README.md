@@ -79,22 +79,5 @@ openclaw-llm-preset-switcher/
   .gitignore
   bin/
     generate_auto_preset.py
-License
 
-Private/internal use unless you choose to publish it.
 
-Then run this from the repo folder:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin git@github.com:YOURNAME/openclaw-llm-preset-switcher.git
-git push -u origin main
-
-If you want the repo private from the start with GitHub CLI:
-
-gh repo create openclaw-llm-preset-switcher --private --source=. --remote=origin --push
-
-One more file worth adding is a very small LICENSE or INTERNAL-USE note if this is only for your own OpenClaw setup.
