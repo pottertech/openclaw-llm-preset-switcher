@@ -59,19 +59,14 @@ Supported providers
 The helper script supports preset output for:
 
 OpenAI-compatible
-
 Ollama
-
 Anthropic
-
 Gemini
-
 Notes
 
 This skill does not automatically modify provider configuration on its own.
 
 It guides model behavior for the current turn. If you want machine-readable preset JSON, use
-
 the helper script.
 
 
