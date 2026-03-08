@@ -70,14 +70,8 @@ Notes
 
 This skill does not automatically modify provider configuration on its own.
 
-It guides model behavior for the current turn. If you want machine-readable preset JSON, use the helper script.
+It guides model behavior for the current turn. If you want machine-readable preset JSON, use
 
-Recommended repo layout
-openclaw-llm-preset-switcher/
-  SKILL.md
-  README.md
-  .gitignore
-  bin/
-    generate_auto_preset.py
+the helper script.
 
 
