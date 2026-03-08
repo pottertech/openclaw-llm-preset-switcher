@@ -106,7 +106,7 @@ def render(provider: str, task_class: str, mode_override: str | None, tokens: in
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate provider-aware preset JSON for the OpenClaw auto preset switcher skill.")
+    parser = argparse.ArgumentParser(description="Generate provider-aware preset JSON for the OpenClaw llm preset switcher skill.")
     parser.add_argument("--provider", required=True, choices=sorted(PROVIDER_FIELDS.keys()))
     parser.add_argument("--task-class", required=True, choices=sorted(TASK_MAP.keys()))
     parser.add_argument("--mode", choices=sorted(MODE_PRESETS.keys()))
