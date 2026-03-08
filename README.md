@@ -30,7 +30,7 @@ Examples:
 
 ```text
 SKILL.md
-bin/generate_auto_preset.py
+bin/generate_llm_preset.py
 Install
 
 Copy this folder into one of these OpenClaw skill locations:
@@ -50,10 +50,10 @@ The helper script can also generate provider-specific preset JSON.
 
 Examples:
 
-python3 bin/generate_auto_preset.py --provider ollama --task-class shell
-python3 bin/generate_auto_preset.py --provider openai --task-class planning
-python3 bin/generate_auto_preset.py --provider anthropic --task-class rag --tokens 1800
-python3 bin/generate_auto_preset.py --provider gemini --task-class creative_prompting --mode creative
+python3 bin/generate_llm_preset.py --provider ollama --task-class shell
+python3 bin/generate_llm_preset.py --provider openai --task-class planning
+python3 bin/generate_llm_preset.py --provider anthropic --task-class rag --tokens 1800
+python3 bin/generate_llm_preset.py --provider gemini --task-class creative_prompting --mode creative
 Supported providers
 
 The helper script supports preset output for:
