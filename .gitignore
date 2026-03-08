@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+ENV/
+.python-version
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env and secrets
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+private/
+config.local.json
+
+# OpenClaw local/runtime artifacts
+workspace/
+tmp/
+.cache/
+
+# Archives
+*.zip
+*.tar
+*.gz
