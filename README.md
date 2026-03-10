@@ -1,72 +1,77 @@
-# OpenClaw LLM Preset Switcher v1.0.0
+# OpenClaw LLM Preset Switcher
 
-A custom OpenClaw skill that classifies a request by task type and recommends the best execution preset for the current turn.
+A lightweight helper tool and OpenClaw skill that classifies tasks and generates
+recommended LLM execution presets.
 
-This skill is built for operational reliability. It helps map requests into task classes such as shell, coding, RAG, browser, vision QC, creative prompting, planning, file operations, and troubleshooting.
+This project does **not directly modify OpenClaw configuration**.
 
-## What it does
+It:
+1. Classifies the task
+2. Selects a role and execution mode
+3. Emits JSON presets that another tool or agent can apply.
 
-The skill classifies a request into:
+---
 
-- Task class
-- Agent role
-- Execution mode
+## Purpose
 
-It then guides the agent toward a safer and more effective response style for that task.
-
-Examples:
-
-- shell -> brodie -> strict
-- coding -> coding -> balanced
-- rag -> rag -> balanced
-- browser -> brodie -> safe
-- vision_qc -> vision -> balanced
-- creative_prompting -> arty -> creative
-- planning -> brodie -> balanced
-- file_ops -> brodie -> safe
-- troubleshooting -> brodie -> safe
-
-## Included files
-
-```text
-SKILL.md
-bin/generate_llm_preset.py
-Install
-
-Copy this folder into one of these OpenClaw skill locations:
-
-~/.openclaw/skills/openclaw-llm-preset-switcher
-
-or
-
-<workspace>/skills/openclaw-llm-preset-switcher
-Usage
-
-The skill is intended to be available to OpenClaw during normal runs.
-
-If your setup supports user-invocable skills, you can invoke it directly through the skill system.
-
-The helper script can also generate provider-specific preset JSON.
+Different tasks benefit from different LLM settings.
 
 Examples:
 
-python3 bin/generate_llm_preset.py --provider ollama --task-class shell
-python3 bin/generate_llm_preset.py --provider openai --task-class planning
-python3 bin/generate_llm_preset.py --provider anthropic --task-class rag --tokens 1800
-python3 bin/generate_llm_preset.py --provider gemini --task-class creative_prompting --mode creative
-Supported providers
+| Task | Best Mode |
+|-----|-----|
+| shell operations | operational |
+| browser automation | operational |
+| research | analytical |
+| debugging | analytical |
+| creative writing | creative |
 
-The helper script supports preset output for:
+This tool standardizes those settings.
 
-OpenAI-compatible
-Ollama
-Anthropic
-Gemini
-Notes
+---
 
-This skill does not automatically modify provider configuration on its own.
+## Repo Structure
 
-It guides model behavior for the current turn. If you want machine-readable preset JSON, use
-the helper script.
+.
+├── SKILL.md
+├── README.md
+└── bin
+    └── generate_llm_preset.py
 
+---
 
+## Usage
+
+Example:
+
+python bin/generate_llm_preset.py shell
+
+Example output:
+
+{
+ "role": "operator",
+ "mode": "operational",
+ "temperature": 0.2,
+ "top_p": 0.9,
+ "max_tokens": 1200
+}
+
+---
+
+## Task Classes
+
+shell
+browser
+rag
+troubleshooting
+file_ops
+creative
+planning
+
+---
+
+## Safety
+
+This tool **never edits OpenClaw configuration automatically**.
+
+The output JSON is intended to be consumed by another workflow or applied manually.
