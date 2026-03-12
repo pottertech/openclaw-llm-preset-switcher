@@ -1,0 +1,51 @@
+{
+  "schema_version": "2.0.0",
+  "request_text": "Fix my nginx config and verify it's working correctly",
+  "task_label": "troubleshooting",
+  "workflow_phase": "execute",
+  "memory_context_summary": "Previous nginx troubleshooting session completed",
+  "memory_tags": ["troubleshoot", "nginx", "config", "web"],
+  "prior_decisions": [
+    {
+      "decision_id": "dec-nginx-001",
+      "decision": "Check nginx config syntax first",
+      "timestamp": "2026-03-10T14:30:00Z"
+    },
+    {
+      "decision_id": "dec-nginx-002", 
+      "decision": "Verify sites-enabled symlinks",
+      "timestamp": "2026-03-10T14:32:00Z"
+    }
+  ],
+  "candidate_skills": [
+    {
+      "name": "nginx-debug",
+      "confidence": 0.92,
+      "tool_types": ["shell", "file"]
+    },
+    {
+      "name": "web-verify",
+      "confidence": 0.78,
+      "tool_types": ["browser", "shell"]
+    }
+  ],
+  "candidate_skill_scores": {
+    "nginx-debug": 0.92,
+    "web-verify": 0.78,
+    "system-check": 0.45
+  },
+  "token_budget_state": {
+    "context_used": 8500,
+    "context_limit": 16000,
+    "risk_level": "medium",
+    "safe_max_tokens": 3500,
+    "token_pressure": 0.53
+  },
+  "context_used": 8500,
+  "context_limit": 16000,
+  "risk_level": "medium",
+  "safe_max_tokens": 3500,
+  "current_model": "ollama/kimi-k2.5:cloud",
+  "preferred_model_family": "kimi",
+  "approval_required": false
+}

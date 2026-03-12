@@ -1,0 +1,4 @@
+{
+  "request_text": "List files in the current directory",
+  "task_label": "shell"
+}

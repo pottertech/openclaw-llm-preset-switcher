@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0.0",
+  "task_class": "troubleshooting",
+  "confidence": 0.92,
+  "reason": "Classification: Matched patterns: .*\\b(debug|fix|repair|troubleshoot)\\b.*; Phase: Matched pattern: .*\\b(run|execute|do|perform)\\b.*; Adjustment: Prior decisions suggest execution",
+  "recommended_role": "debugger",
+  "recommended_mode": "analytical",
+  "recommended_model_family": "deepseek",
+  "reasoning_depth": "shallow",
+  "tool_policy": "conservative",
+  "context_priority": "balanced",
+  "latency_priority": "quality",
+  "cost_priority": "balanced",
+  "max_output_budget": 1400,
+  "phase_hint": "execute",
+  "execution_style": "careful",
+  "verification_needed": true,
+  "approval_gate": false,
+  "selected_candidate_skill": "nginx-debug",
+  "candidate_chain_hint": [
+    "nginx-debug",
+    "web-verify"
+  ],
+  "role": "debugger",
+  "mode": "analytical",
+  "temperature": 0.3,
+  "top_p": 0.9,
+  "max_tokens": 1600
+}

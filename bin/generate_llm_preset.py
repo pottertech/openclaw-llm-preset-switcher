@@ -1,31 +1,16 @@
-import json
+#!/usr/bin/env python3
+"""
+OpenClaw LLM Preset Switcher v2.0
+CLI Entrypoint - Backward compatible wrapper
+"""
+
 import sys
+import os
 
-TASK_MAP = {
- "shell": ("operator","operational"),
- "browser": ("operator","operational"),
- "rag": ("researcher","analytical"),
- "troubleshooting": ("debugger","analytical"),
- "file_ops": ("operator","operational"),
- "creative": ("creator","creative"),
- "planning": ("planner","analytical")
-}
+# Add src to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-MODE_PRESETS = {
- "operational": {"temperature":0.2,"top_p":0.9,"max_tokens":1200},
- "analytical": {"temperature":0.4,"top_p":0.9,"max_tokens":1600},
- "creative": {"temperature":0.8,"top_p":0.95,"max_tokens":2000}
-}
+from main import main
 
-task = sys.argv[1] if len(sys.argv) > 1 else "planning"
-
-role,mode = TASK_MAP.get(task,("planner","analytical"))
-preset = MODE_PRESETS[mode]
-
-output = {
- "role": role,
- "mode": mode,
- **preset
-}
-
-print(json.dumps(output,indent=2))
+if __name__ == '__main__':
+    main()
