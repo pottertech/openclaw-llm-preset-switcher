@@ -1,4 +1,4 @@
-# OpenClaw LLM Preset Switcher v2.0
+# 🦞 OpenClaw LLM Preset Switcher v2.0
 
 **Execution Policy Engine for the OpenClaw Ecosystem**
 
