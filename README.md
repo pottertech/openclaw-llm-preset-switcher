@@ -2,7 +2,7 @@
 
 **Execution Policy Engine for the OpenClaw Ecosystem**
 
-Converts task requests into structured execution policy, integrating with:
+Converts task requests into a structured execution policy, integrating with:
 - **pg-memory** (context recall)
 - **dynamic-skills** (skill candidates)
 - **token-guardian** (token budgets)
